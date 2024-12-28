@@ -1,7 +1,7 @@
 # Chat Bot WhatsApp Sederhana
 
 ## Deskripsi Proyek
-Proyek ini adalah sebuah chat bot WhatsApp sederhana berbasis web, yang dibangun menggunakan HTML, CSS, dan JavaScript. Bot ini memiliki fitur dasar seperti:
+Proyek ini adalah sebuah chat bot sederhana berbasis web, yang dibangun menggunakan HTML, CSS, dan JavaScript. Bot ini memiliki fitur dasar seperti:
 - **Logika NLP sederhana** untuk memahami perintah pengguna.
 - **Fitur sinonim** untuk memproses kata yang memiliki arti serupa.
 - **Tombol Clear Chat** untuk menghapus semua pesan dengan animasi transisi.
@@ -15,24 +15,21 @@ Bot ini dirancang agar mudah dikustomisasi dan dipahami oleh pemula dalam dunia 
 2. **Animasi Clear Chat**  
    Saat tombol clear ditekan, chat akan terhapus dengan efek animasi yang halus.
 
-3. **Dropdown Menu di Header**  
-   Pada bagian atas chat bot, terdapat menu dropdown yang muncul ketika ikon titik tiga diklik. Menu ini memuat opsi untuk mengganti profil pengguna.
+3. **Daftar Menu**  
+   Pada bagian atas pojok kanan chat bot, terdapat titik tiga yang dapat memunculkan daftar menu.
 
-4. **Ganti Profil Pengguna**  
-   Dropdown menu berisi daftar profil (Profile 1, Profile 2, Profile 3) yang dapat dipilih pengguna. Profil utama bisa diganti langsung dari menu ini.
-
-5. **Upload Foto Profil**  
-   Pengguna dapat mengunggah dan mengganti foto profil mereka langsung dari halaman dengan mengklik gambar profil.
-
-6. **Edit Deskripsi Pengguna**  
-   Pengguna dapat mengubah deskripsi profil secara langsung dengan mengklik teks deskripsi. Deskripsi baru akan disimpan dan tampil secara langsung.
+5. **Ganti Username / Pengguna Profil**
+   Pengguna dapat mengganti nama sesuai dengan keinginan dari halaman dengan mengklik gambar profil > Edit Username.
+   
+7. **Ganti / Upload Foto Profil**  
+   Pengguna juga dapat melihat, mengunggah dan memilih untuk mengganti foto profil mereka langsung dari halaman dengan mengklik gambar profil.
 
 ## Teknologi yang Digunakan
 - **HTML** – Struktur halaman web.
 - **CSS** – Desain dan animasi.
 - **JavaScript** – Logika interaktif dan manipulasi DOM.
 
-## Cara Menggunakan
+## Cara Menggunakan / Instalasi
 1. Clone repositori ini:
    ```bash
    git clone https://github.com/abdansyakur354/chatbot.github.io.git
