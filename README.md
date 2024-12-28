@@ -1,4 +1,4 @@
-# Chat Bot WhatsApp Sederhana
+# Chat Bot Sederhana
 
 ## Deskripsi Proyek
 Proyek ini adalah sebuah chat bot sederhana berbasis web, yang dibangun menggunakan HTML, CSS, dan JavaScript. Bot ini memiliki fitur dasar seperti:
