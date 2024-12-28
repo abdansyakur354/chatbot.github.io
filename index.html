@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Chatbot Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header Chat -->
+  <div class="container-header">
+    <div class="chat-header">
+      <div class="profile-container">
+        <!-- Profile -->
+        <img src="profile/profile-1.png" alt="User Profile" class="profile-image" onclick="toggleMenu()" />
+        <input type="file" id="imageUpload" accept="image/*" onchange="changeProfilePic(event)" style="display: none;">
+        <div class="menu-content" id="menuContent">
+          <div class="dropdown">
+            <a href="#" class="dropdown-btn" onclick="toggleDropdown(event)">Profile &#9662;</a>
+            <div class="dropdown-content" id="profileDropdown">
+              <a onclick="enlargeImage()">View Profile</a>
+              <a onclick="openFileInput()">Edit Profile</a>
+              <a href="#" onclick="changeProfile('profile/profile-2.png')">Profile 1</a>
+              <a href="#" onclick="changeProfile('profile/profile-3.png')">Profile 2</a>
+              <a href="#" onclick="changeProfile('profile/profile-4.png')">Profile 3</a>
+              <a href="#" onclick="changeProfile('profile/profile-5.png')">Profile 4</a>
+              <a href="#" onclick="changeProfile('profile/profile-6.png')">Profile 5</a>
+              <a href="#" onclick="changeProfile('profile/profile-7.png')">Profile 6</a>
+              <a href="#" onclick="changeProfile('profile/profile-8.png')">Profile 7</a>
+              <a href="#" onclick="changeProfile('profile/profile-9.png')">Profile 8</a>
+              <a href="#" onclick="changeProfile('profile/profile-10.png')">Profile 9</a>
+              <a href="#" onclick="changeProfile('profile/profile-11.png')">Profile 10</a>
+              <a href="#" onclick="changeProfile('profile/profile-12.png')">Profile 11</a>
+              <a href="#" onclick="changeProfile('profile/profile-13.png')">Profile 12</a>
+              <a href="#" onclick="changeProfile('profile/profile-14.png')">Profile 13</a>
+              <a href="#" onclick="changeProfile('profile/profile-15.png')">Profile 14</a>
+
+            </div>
+          </div>
+          <a onclick="editUsername()">Edit Username</a>
+        </div>
+        <div id="imgModal" class="modal" onclick="closeModal()">
+          <img src="profile.png" class="modal-content" id="modalImg">
+        </div>
+
+        <!-- Username -->
+        <span class="username">Chat Fake</span>
+        <input type="text" id="usernameInput" class="username-input" onblur="saveUsername()"
+          onkeydown="checkEnter(event)" style="display: none;">
+      </div>
+      <!-- Menu -->
+      <div class="menu-container">
+        <button class="menu-button">⋮</button>
+        <div class="dropdown-menu">
+          <a href="#" onclick="clearChat()">Bersihkan Chat</a>
+          <a href="profile-chat-bot.html">Tentang Chat Bot</a>
+          <a href="laporan-bug.html">Laporkan Bug</a>
+        </div>
+      </div>
+    </div>
+    <!-- Box Chat -->
+    <div class="chat-box" id="chat-box">
+      <div class="message-center message">Ketik <strong>menu</strong> untuk memulai <strong>clear</strong> untuk
+        menghapus chat.</div>
+    </div>
+    <!-- Input Chat -->
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Ketik pesan..." />
+      <button onclick="sendMessage()"><i class='bx bx-send'></i></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

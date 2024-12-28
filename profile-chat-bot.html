@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Chatbot</title>
+</head>
+
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <!-- <img src="./profile-chat-bot/chat-bot-logo.jpg" alt="Chatbot Profile" class="profile-image" id="profileImage"> -->
+            <img src="./profile-chat-bot/chat-bot-logo.jpg" alt="Chatbot Profile" class="profile-image"
+                id="profileImage" onclick="openFullscreen(this)">
+            <div class="profile-info">
+                <h1 id="botName">ChatBot</h1>
+                <p id="botDescription">Asisten virtual yang siap membantu Anda 24/7.</p>
+            </div>
+        </div>
+
+        <div class="profile-body">
+            <h2>Tentang Chatbot</h2>
+            <p>Chatbot ini dirancang untuk membantu pengguna dengan menjawab pertanyaan umum, memberikan rekomendasi,
+                serta menangani berbagai fitur otomatisasi.</p>
+
+            <h2>Fitur Utama</h2>
+            <ul>
+                <li>Respon cepat dan akurat</li>
+                <li>Integrasi dengan WhatsApp</li>
+                <li>Pemahaman NLP (Natural Language Processing)</li>
+                <li>Mampu memberikan sinonim dan solusi</li>
+                <li>Fitur clear chat untuk membersihkan pesan</li>
+            </ul>
+
+            <h2>Laporkan Bug</h2>
+            <p>Jika Anda menemukan bug, silakan laporkan melalui halaman <a href="laporan-bug.html">Laporan Bug</a>.</p>
+        </div>
+
+        <div class="profile-footer">
+            <button onclick="changeProfile()">Ganti Foto Profil</button>
+        </div>
+    </div>
+    <!-- Modal untuk fullscreen -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeFullscreen()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .profile-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid #25D366;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-info h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .profile-body h2 {
+            margin: 20px 0 10px;
+            color: #333;
+        }
+
+        .profile-body p,
+        .profile-body ul {
+            font-size: 16px;
+            color: #666;
+            text-align: left;
+        }
+
+        .profile-body ul {
+            list-style-type: disc;
+            margin: 10px 0 20px 30px;
+        }
+
+        .profile-footer button {
+            background-color: #25D366;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .profile-footer button:hover {
+            background-color: #1ebe57;
+        }
+
+        .profile-header img.fade-out {
+            opacity: 0;
+        }
+
+        .profile-header img.fade-in {
+            opacity: 1;
+        }
+
+        /* Modal fullscreen */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            /* padding-top: 50px; */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            display: block;
+            margin: 5rem auto;
+            max-width: 50%;
+            max-height: 50%;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.4s;
+        }
+
+        /* Animasi zoom */
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* Tombol close di fullscreen */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+    </style>
+    <script>
+        // Buka fullscreen modal
+        function openFullscreen(img) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modalImage');
+
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+
+        // Tutup fullscreen modal
+        function closeFullscreen() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        function changeProfile() {
+            // Simulasi pemilihan profil dengan prompt
+            const profiles = [
+                { src: './profile-chat-bot/profile1.png', name: 'Chat Bot Friends', description: 'Versi pertama dari Chat Bot' },
+                { src: './profile-chat-bot/profile2.png', name: 'Chat Bot Beginners', description: 'Versi ringan untuk penggunaan dasar' },
+                { src: './profile-chat-bot/profile3.png', name: 'Chat Bot Pro', description: 'Versi profesional dengan lebih banyak fitur' },
+            ];
+
+            const selected = prompt("Pilih profil: 1, 2, atau 3");
+
+            if (selected >= 1 && selected <= 3) {
+                const newProfile = profiles[selected - 1];
+                const profileImage = document.getElementById('profileImage');
+
+                // Tambahkan animasi fade-out sebelum mengganti gambar
+                profileImage.classList.add('fade-out');
+
+                setTimeout(() => {
+                    profileImage.src = newProfile.src;
+                    document.getElementById('botName').textContent = newProfile.name;
+                    document.getElementById('botDescription').textContent = newProfile.description;
+
+                    // Hilangkan animasi fade-out dan tambahkan fade-in
+                    profileImage.classList.remove('fade-out');
+                    profileImage.classList.add('fade-in');
+                }, 1000); // Waktu tunggu sebelum gambar berubah
+            } else {
+                alert('Pilihan tidak valid. Silakan pilih 1, 2, atau 3.');
+            }
+        }
+
+    </script>
+</body>
+
+</html>
